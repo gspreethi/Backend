@@ -1,4 +1,4 @@
-package com.app.project.model;
+package com.gift.api.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
