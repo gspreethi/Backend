@@ -10,10 +10,8 @@ import com.gift.api.model.Category;
 public interface CategoryRepo extends JpaRepository<Category,String> {
 	
 	@Query("select a.type from Category a where a.category=?1")
-	public List getByCategory(String cat);
+	public List getByCategoryName(String cat);
 	
 	@Query("select distinct a.type from Category a")
-	public List getdressType();
-	
-
+	public List getType();
 }
