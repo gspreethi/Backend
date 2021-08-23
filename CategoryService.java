@@ -22,10 +22,10 @@ public class CategoryService {
 		return cat;
 	}
 	
-	public List getByCategories(String cat)
+	public List getByCategories(String category)
 	{
 	
-		List cat=categoryrepo.getByCategory(cat);
+		List cat=categoryrepo.getByCategoryName(category);
 		return cat; 
 	}
 	
@@ -36,3 +36,4 @@ public class CategoryService {
 	}
 
 }
+	
