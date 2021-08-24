@@ -8,6 +8,7 @@ import com.gift.api.model.GiftUser;
 
 @Service
 public class giftService {
+	
 	@Autowired
 	UserRepo repo;
 			
@@ -29,4 +30,9 @@ public class giftService {
 		GiftUser user=repo.findByPassword(password);
 		return user;
 	}
+	
+//	public String getCategory(int id) {
+//		String user=UserRepo.userCategory(id);
+//		return user;
+//	}
 }
