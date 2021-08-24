@@ -13,17 +13,17 @@ public class Category {
 	@Id
 	private String catId;
 	private String categoryName;
-	private String type;
+	private String item;
 	
 	public Category() {
 		super();
 	}
 
-	public Category(String catId, String categoryName, String type) {
+	public Category(String catId, String categoryName, String item) {
 		super();
 		this.catId = catId;
 		this.categoryName = categoryName;
-		this.type = type;
+		this.item = item;
 	}
 
 	public String getCatId() {
@@ -42,16 +42,16 @@ public class Category {
 		this.categoryName = categoryName;
 	}
 
-	public String getType() {
-		return type;
+	public String getItem() {
+		return item;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setItem(String item) {
+		this.item = item;
 	}
 
 	@Override
 	public String toString() {
-		return "Category [catId=" + catId + ", categoryName=" + categoryName + ", type=" + type + "]";
+		return "Category [catId=" + catId + ", categoryName=" + categoryName + ", item=" + item + "]";
 	}
 	}
