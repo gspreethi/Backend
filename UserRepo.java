@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.gift.api.model.GiftUser;
 
 @Repository
-@EnableJpaRepositories
+//@EnableJpaRepositories
 public interface UserRepo extends JpaRepository<GiftUser, Integer> {
 
 //	List<giftUser> findByEname(String ename);
@@ -28,8 +28,14 @@ public interface UserRepo extends JpaRepository<GiftUser, Integer> {
     public void updatePassword(int id,String pass);
 	
 	GiftUser findByPassword(String password);
-	GiftUser findById(int id);
+	
+//	@Query("select u.usercategory from User u where u.id=?1")
+//	public String userCategory(int id);
+	
+	//GiftUser findByUserId(int id);
 
 	
 }
+
+
 
