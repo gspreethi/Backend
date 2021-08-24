@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -80,5 +81,31 @@ public class Controller {
 		}
 		return res;
 		}
+	
+//	@GetMapping(path="/getcategoryById/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
+//	public String showCategory(@PathVariable int id) {
+//		String user=service.getCategory(id);
+//		return user;
+//	}
+	
+	
+	@GetMapping(path="/get/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public GiftUser getByid(@PathVariable int id)
+	{
+		GiftUser user=service.getUserId(id);
+		return user;
 	}
 	
+	@PatchMapping("/updatePassword/{id}/{password}")
+	public ResponseEntity<GiftUser> updateEmployeePartially(@PathVariable int userid, @PathVariable String password) {
+		try {
+			GiftUser user = service.getUserId(userid);
+			user.setPassword(password);
+			return new ResponseEntity<GiftUser>(service.storeUser(user), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	}
+	
+
