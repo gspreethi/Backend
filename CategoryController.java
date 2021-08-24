@@ -23,9 +23,9 @@ public class CategoryController {
 	
 	
 	@PostMapping(path="/setCat",consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Category> insertcat(@RequestBody Category cat) {
+	public ResponseEntity<Category> insertCat(@RequestBody Category cat) {
 
-		categoryService.setCat(cat);
+		categoryservice.setCat(cat);
 
 	return new ResponseEntity<Category>(cat,HttpStatus.OK);
 	}
@@ -44,7 +44,7 @@ public class CategoryController {
 	
 	@GetMapping(path="/getType",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List showType() {
-		List cat=categoryservice.getType();
+		List cat=categoryservice.getItem();
 		return cat;
 	}
 }
