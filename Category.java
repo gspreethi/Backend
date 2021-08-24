@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Category {
 
 	@Id
-	private String catId;
+	private int catId;
 	private String categoryName;
 	private String item;
 	
@@ -19,18 +19,18 @@ public class Category {
 		super();
 	}
 
-	public Category(String catId, String categoryName, String item) {
+	public Category(int catId, String categoryName, String item) {
 		super();
 		this.catId = catId;
 		this.categoryName = categoryName;
 		this.item = item;
 	}
 
-	public String getCatId() {
+	public int getCatId() {
 		return catId;
 	}
 
-	public void setCatId(String catId) {
+	public void setCatId(int catId) {
 		this.catId = catId;
 	}
 
