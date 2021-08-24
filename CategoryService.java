@@ -3,8 +3,8 @@ package com.gift.api.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.gift.api.dao.CategoryRepo;
-import com.gifr.api.model.Category;
+import com.gift.api.doa.CategoryRepo;
+import com.gift.api.model.Category;
 
 @Service
 public class CategoryService {
@@ -29,11 +29,10 @@ public class CategoryService {
 		return cat; 
 	}
 	
-	public List getType()
+	public List getItem()
 	{
-		List cat=categoryrepo.getType();
+		List cat=categoryrepo.getItem();
 		return cat;
 	}
 
 }
-	
